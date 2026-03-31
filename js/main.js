@@ -22,19 +22,19 @@ projects: [
       cover: "assets/eljumealvidrieria.com_.png"
     },
     {
+      title: "iShop — Tienda de celulares",
+      desc: "Landing page de e-commerce desarrollada con HTML, CSS y JavaScript vanilla. Incluye diseño responsive, slider interactivo de productos y estructura optimizada para destacar promociones y mejorar la experiencia de usuario.",
+      link: "https://www.ishoparg.net",
+      tags: ["HTML", "CSS", "JavaScript"],
+      cover: "assets/ishop-banner-mobile.png",
+      coverAlt: "iShop tienda de celulares"
+    },
+    {
       title: "Tentazione — Alfajores artesanales",
       desc: "Sitio multipágina con catálogo, formulario de pedidos, WhatsApp y mapa. UI con Tailwind y slider en JS.",
       link: "https://jere-dev-tech.github.io/tentazione-web/",
       tags: ["HTML", "CSS", "Tailwind", "JavaScript"],
       cover: "assets/TENTAZION.png"
-    },
-    {
-      title: "iShop — Tienda de celulares",
-      desc: "Landing page moderna para una tienda de celulares y tecnología, enfocada en mostrar productos destacados y promociones.",
-      link: "https://ishopdemo.vercel.app/",
-      tags: ["HTML", "CSS", "JavaScript"],
-      cover: "assets/ishopdemo.vercel.png",
-      coverAlt: "iShop tienda de celulares"
     },
     {
       title: "Un Café — Cafetería",
@@ -188,6 +188,9 @@ function renderProjects(containerSel, items){
   items.forEach(p => {
     const card = document.createElement("article");
     card.className = "card";
+    if ((p.title || "").toLowerCase().includes("ishop")) {
+      card.classList.add("project-ishop");
+    }
 
     const coverHtml = p.cover
       ? `<div class="card-image"><img src="${p.cover}" alt="${p.coverAlt || p.title || ""}" loading="lazy"></div>`
